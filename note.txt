@@ -1,0 +1,133 @@
+Imagem: é o projeto que será executado pelo container;
+Container: é o docker rodando alguma imagem;
+
+###############################################################################################
+# Para encontrar imagens para o docker: 
+# 
+# uri: hub.docker.com
+#
+# -> Comando para Executar uma Imagem no docker
+#
+# $ docker run -it <nome_imagem> ("Roda por tempo inderermido devito o -it")
+#
+# -> Comando para verificar os processos docker em execução
+#
+# $ docker ps
+#
+###############################################################################################
+# Verificar Conteiners executados e executando
+#
+# Comando que exibe os container que estão sendo executado
+#
+# $ docker ps 
+#
+# $ docker contener ls ("Comando mains novo")
+#
+# Verifica todos os containers já foram executados
+#
+# flag -a
+# $ docker ps -a
+# 
+#############################################################################################
+# Executando container em background
+#
+# Dessa maneira podemos executar os container sem travar ou abrir varios terminais ele fica
+# em background para executar em modo backgroundusamos a flag -d
+#
+############################################################################################# 
+# Expor Portas
+#
+# Container docker não tem conexão com nada fora deles
+#
+# Desta maneira precisamos expor as portas utilizando a flag -p exemplo: -p 80:80
+#
+# Desta maneira o container estará acessivel na porta 80
+#
+# $ docker run -d -p 80:80 nginx
+#
+# $ docker run -d -p 3000:80 nginx (3000 = porta que vai refletir e que estou expondo 
+# na maquina 80 = porta que sera recebida do container )
+#
+###############################################################################################
+# Comando de Parar o container
+#
+# Podemos para o conteineir usando o comando (docker stop <id ou nome>)
+#
+##############################################################################################
+# Iniciando Container
+#
+# para executar um container parado usamos:
+#
+# $ docker start <id>
+#
+###############################################################################################
+# Definir nome de um container
+#
+# Definimos um nome de um container usando a flag --name
+#
+# $ docker container run -d -p 80:80 --name nginx_app nginx
+#
+###############################################################################################
+# Verificar os logs do docker (Muito importante)
+#
+# Podemos verificar o que aconteceu em um container com o comando logs;
+#
+# Utilizamos da seguinte maneira: docker logs <id>
+#
+# As últimas ações realizadas no container, serão exibidas no terminal
+#
+###############################################################################################
+# Removendo containers
+#
+# Podemos remover container da máquina que estamos executando o DOcker;
+#
+# O comando utilizado é:
+# $ docker -rm <id>
+# 
+# caso o container ainda estiver rodando podemor forçar sua deleção usando a flag -f (force)
+#
+# O container removido não é listado no comando $ docker ps -a
+#
+# forçando remoção
+# $ docker rm <id ou nome> -f
+#
+################################################################################################
+# Criando e configurando uma nova imagem
+#
+# FROM: imagem base ("Qual sera a base que essa imagem vai execudar um node um java")
+#
+# WORKDIR: diretório da aplicação (" é usado para definir o diretório de 
+  trabalho de um contêiner do Docker a qualquer momento. O comando é especificado no arquivo Dockerfile")
+#
+# COPY: define quais arquivos precisam ser copiados
+ ("Se você deseja copiar arquivos e diretórios dentro de um Docker Container de sua máquina local, 
+ você pode usar a instrução COPY dentro de seu Dockerfile")
+#
+# RUN: (Serve para executar comandos no processo de montagem da imagem que estamos construindo no Dockerfile,
+ ele é executado durante o build (construção da imagem) e não durante a construção do container. 
+ Em um Dockerfile é possível ter mais de um comando RUN.)
+#
+# EXPOSE:   ("Instrução que informa qual porta deverá ser liberada. EXPOSE não é um comando que libera a porta, 
+ ele serve para ficar documentado no Dockerfile quais portas deverão ser liberadas ao criar o container.")
+#
+# CMD: ("Diferente do RUN, o CMD executa apenas na criação do container e não no build da imagem. Deve ser único no Dockerfile.)
+#
+#---------------------------------------------------------------------------------------------------------------------------------
+# Comandos:
+#
+# 1 - Criar uma imagem: 
+#
+# $ docker build .
+#
+# 2 - Verificar imagens criada:
+#
+# $ docker image ls
+#
+# 3 - Rodar o conteiner com a imagem se definir a porta:git configurando
+#
+# $ docker run <id da imagem>
+#
+# 4 - Rodas o conteiner definindo qual porta ele sera executado ("Forma correta de executar imagem"):
+#
+# $ docker run -d -p portaLocal:portaDoContainer --name nomeDoconteiner <id da imagem>
+#
