@@ -152,3 +152,16 @@ Container: é o docker rodando alguma imagem;
 # O resto permanece em cache, tornando o build mais rápido;
 #
 #####################################################################################################################
+# Download de imagens
+#
+# Podemos fazer o download de alguma imagem de hub e deixá-la disponivel em nosso ambiente;
+#
+# Vamos utilizar o comando docker pull <Imagem>
+#
+# Desta maneira. caso se use em outro container, a imagem jpa estará pronta para ser utilizada;
+#
+# ==== Imagem python ====
+#
+# $ docker pull python 
+#
+######################################################################################################################
