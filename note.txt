@@ -132,10 +132,23 @@ Container: é o docker rodando alguma imagem;
 # $ docker run -d -p portaLocal:portaDoContainer --name nomeDoconteiner <id da imagem>
 #
 ##################################################################################################################
+# Alteração de imagem
+#
+# Sempre que tiver alteração é necessario rodar o build novamente e criar o container da imagem
+#
+# $docker build .
+# $docker run -d -p <porta local>:<porta do container> --name <nome da aplicação> <id da imagem>
 #
 #
+#####################################################################################################################
+# Camadas das imagens
 #
+# As imagens no docker são divididas em camadas(layers)
+# 
+# Cada camada do DOckerfile representa uma layer
 #
+# Quando algo é atualizado apenas as layers depois da linha atualizada açO refletidas;
 #
+# O resto permanece em cache, tornando o build mais rápido;
 #
-
+#####################################################################################################################
