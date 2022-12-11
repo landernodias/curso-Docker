@@ -131,3 +131,11 @@ Container: é o docker rodando alguma imagem;
 #
 # $ docker run -d -p portaLocal:portaDoContainer --name nomeDoconteiner <id da imagem>
 #
+##################################################################################################################
+#
+#
+#
+#
+#
+#
+
